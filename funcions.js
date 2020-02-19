@@ -10,5 +10,7 @@ const AllowDrop = (ev) => {
 const Drop = (ev) => {
     ev.preventDefault();
     data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+    console.log("test",ev);
+    document.getElementById("targetbody").appendChild(document.getElementById(data));
+    //ev.target.appendChild(document.getElementById(data));
 }
