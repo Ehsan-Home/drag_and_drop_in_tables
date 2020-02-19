@@ -1,5 +1,13 @@
 const drag = (ev) => {
+    console.log("drag test")
     ev.dataTransfer.setData("text" , ev.target.id)
+    
+    let rowid = document.getElementById("row1");
+    rowid.style.fontStyle = "italic";
+    let crowid = rowid.cloneNode(true);
+    //console.log("crowid:",crowid);
+    let inner = crowid.getElementByClassName("rowclass");
+    console.log("inner name" , inner);
 }
 
 const AllowDrop = (ev) => {
@@ -12,5 +20,7 @@ const Drop = (ev) => {
     data = ev.dataTransfer.getData("text");
     console.log("test",ev);
     document.getElementById("targetbody").appendChild(document.getElementById(data));
+    document.getElementById("row1").style.fontStyle = "normal"
     //ev.target.appendChild(document.getElementById(data));
 }
+
