@@ -23,4 +23,3 @@ const Drop = (ev) => {
     document.getElementById("row1").style.fontStyle = "normal"
     //ev.target.appendChild(document.getElementById(data));
 }
-

@@ -1,0 +1,12 @@
+.table1 .ehsan-move{
+    visibility: hidden;
+}
+
+.table1 td:hover .ehsan-move  {
+    visibility: visible;
+}
+
+.move-icon{
+    color: rgb(124, 123, 123);
+    cursor: all-scroll;
+}
