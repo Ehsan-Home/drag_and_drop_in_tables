@@ -15,14 +15,34 @@
         <div class="row">
             <div class="col-6">
                 <div id="simpleList" class="list-group">
-                    <div class="list-group-item">Ehsan</a></div>
-                    <div class="list-group-item">Amir</div>
+                    <div class="list-group-item">
+                        <div class="d-flex">
+                                <div class="content">Ehsan</div>
+                                <div class="ml-auto move"><i class="fas fa-align-justify"></i></div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="d-flex">
+                            <div class="content">Amir</div>
+                            <div class="ml-auto move"><i class="fas fa-align-justify"></i></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-6">
                 <div id="simpleList2" class="list-group">
-                    <div class="list-group-item">Mahdi</a></div>
-                    <div class="list-group-item">Hossein</div>
+                    <div class="list-group-item">
+                        <div class="d-flex">
+                            <div class="content">Mahdi</div>
+                            <div class="ml-auto move"><i class="fas fa-align-justify"></i></div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="d-flex">
+                            <div class="content">Hossein</div>
+                            <div class="ml-auto move"><i class="fas fa-align-justify"></i></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -34,23 +54,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="funcions.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.1/Sortable.min.js"></script>
-    <!-- <script>
-        new Sortable("list1", {
-            animation: 150,
-            ghostClass: 'blue-background-class'
-        });
-    </script> -->
-    <!-- <script>
-        var el = document.getElementById('list1');
-        var sortable = Sortable.create(el);
-    </script> -->
     <script>
         Sortable.create(simpleList, {
             animation: 150,
             group : 'shared',
         });
-    </script>
-    <script>
         Sortable.create(simpleList2, {
             animation: 150,
             group : 'shared',
