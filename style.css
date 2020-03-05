@@ -7,3 +7,7 @@
 .list-group-item:hover .move{
     visibility: visible;
 }
+
+.list-group-item:nth-child(even) {
+    background: rgb(240, 235, 235);
+}
