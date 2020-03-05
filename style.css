@@ -1,13 +1,25 @@
-.move{
+.hidden-items{
     visibility: hidden;
-    color: rgb(124, 123, 123);
-    cursor: all-scroll;
+    
 }
 
-.list-group-item:hover .move{
+.list-group-item:hover .hidden-items{
     visibility: visible;
 }
 
 .list-group-item:nth-child(even) {
     background: rgb(240, 235, 235);
+}
+
+.move{
+    cursor: all-scroll;
+    color: rgb(124, 123, 123);
+}
+
+.tick{
+    color:#5cb85c;
+}
+
+.calender{
+    color: 	#5e92c0;
 }
