@@ -10,63 +10,51 @@
 </head>
 <body>
     <br>
+    
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <table class="table1 table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="row1" class="rowclass" draggable="true" ondragstart="drag(event)">
-                            <th scope="row">1</th>
-                            <td>
-                                <div class="d-flex">
-                                    <div>ehsan</div>
-                                    <div class="ehsan-move ml-auto">
-                                        <i class="move-icon fas fa-align-justify"></i>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr id="row2" draggable="true" ondragstart="drag(event)">
-                            <th scope="row">2</th>
-                            <td>amir</td>
-                        </tr>
-                    </tbody>
-            
-                </table>
+                <div id="simpleList" class="list-group">
+                    <div class="list-group-item">Ehsan</a></div>
+                    <div class="list-group-item">Amir</div>
+                </div>
             </div>
             <div class="col-6">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">name</th>
-                        </tr>
-                    </thead>
-                    <tbody ondragover="AllowDrop(event)" ondrop="Drop(event)" id="targetbody">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>mahdi</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>hossein</td>
-                        </tr>
-                    </tbody>
-            
-                </table>
+                <div id="simpleList2" class="list-group">
+                    <div class="list-group-item">Mahdi</a></div>
+                    <div class="list-group-item">Hossein</div>
+                </div>
             </div>
         </div>
     </div>
 
+    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="funcions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.1/Sortable.min.js"></script>
+    <!-- <script>
+        new Sortable("list1", {
+            animation: 150,
+            ghostClass: 'blue-background-class'
+        });
+    </script> -->
+    <!-- <script>
+        var el = document.getElementById('list1');
+        var sortable = Sortable.create(el);
+    </script> -->
+    <script>
+        Sortable.create(simpleList, {
+            animation: 150,
+            group : 'shared',
+        });
+    </script>
+    <script>
+        Sortable.create(simpleList2, {
+            animation: 150,
+            group : 'shared',
+        });
+    </script>
 </body>
 </html>
