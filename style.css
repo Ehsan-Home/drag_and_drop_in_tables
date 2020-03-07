@@ -1,6 +1,7 @@
 .hidden-items{
     visibility: hidden;
-    
+    width: 40%;
+    text-align: right;
 }
 
 .list-group-item:hover .hidden-items{
@@ -22,4 +23,42 @@
 
 .calender{
     color: 	#5e92c0;
+}
+
+.Table-header{
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    background-color: rgb(251, 251, 252);
+    height: 50px;
+    line-height: 50px;
+}
+
+.Table-header div div {
+    font-weight: bold;
+}
+
+.table{
+    display: table;
+    border-spacing: 5px;
+}
+
+.theader{
+    font-weight: bold;
+}
+
+.trow
+{
+    display:table-row;
+}
+
+.divCell{
+    display:table-column;
+    width:30%;
+}
+
+.d-flex .divCell:nth-child(even)
+{
+    display:table-column;
+    text-align: center;
+    width:30%;
 }

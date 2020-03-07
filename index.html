@@ -14,11 +14,22 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
+                <!-- <div class="Table-header">
+                    <div class="row">
+                        <div class="col-6">
+                            Name
+                        </div>
+                        <div class="col-6">
+                            #
+                        </div>
+                    </div>
+                </div> -->
+            <div class="table">
                 <div id="simpleList" class="list-group">
-                    <div class="list-group-item">
-                        <div class="d-flex justify-content-between">
-                            <div class="content">Ehsan</div>
-                            <div class="content">1</div>
+                    <div class="list-group-item trow">
+                        <div class="d-flex">
+                            <div class="divCell">Ehsan</div>
+                            <div class="divCell">1</div>
                             <div class="hidden-items">
                                 <i class="move fas fa-align-justify"></i>
                                 <i class="tick fas fa-check"></i>
@@ -27,9 +38,9 @@
                         </div>
                     </div>
                     <div class="list-group-item">
-                        <div class="d-flex justify-content-between">
-                            <div class="content">Amir</div>
-                            <div class="content">2</div>
+                        <div class="d-flex">
+                            <div class="divCell">Amir</div>
+                            <div class="divCell">2</div>
                             <div class="hidden-items">
                                 <i class="move fas fa-align-justify"></i>
                                 <i class="tick fas fa-check"></i>
@@ -38,9 +49,9 @@
                         </div>
                     </div>
                     <div class="list-group-item">
-                        <div class="d-flex justify-content-between">
-                            <div class="content">Amin</div>
-                            <div class="content">3</div>
+                        <div class="d-flex">
+                            <div class="divCell">Amin</div>
+                            <div class="divCell">3</div>
                             <div class="hidden-items">
                                 <i class="move fas fa-align-justify"></i>
                                 <i class="tick fas fa-check"></i>
@@ -49,9 +60,9 @@
                         </div>
                     </div>
                     <div class="list-group-item">
-                        <div class="d-flex justify-content-between">
-                            <div class="content">Reza</div>
-                            <div class="content">4</div>
+                        <div class="d-flex">
+                            <div class="divCell">Reza</div>
+                            <div class="divCell">4</div>
                             <div class="hidden-items">
                                 <i class="move fas fa-align-justify"></i>
                                 <i class="tick fas fa-check"></i>
@@ -61,12 +72,13 @@
                     </div>
                 </div>
             </div>
+            </div>
             <div class="col-6">
                 <div id="simpleList2" class="list-group">
                     <div class="list-group-item">
-                        <div class="d-flex justify-content-between">
-                            <div class="content">Mahdi</div>
-                            <div class="content">5</div>
+                        <div class="d-flex">
+                            <div class="divCell">Mahdi</div>
+                            <div class="divCell">5</div>
                             <div class="hidden-items">
                                 <i class="move fas fa-align-justify"></i>
                                 <i class="tick fas fa-check"></i>
@@ -75,9 +87,9 @@
                         </div>
                     </div>
                     <div class="list-group-item">
-                        <div class="d-flex justify-content-between">
-                            <div class="content">Hossein</div>
-                            <div class="content">6</div>
+                        <div class="d-flex">
+                            <div class="divCell">Hossein</div>
+                            <div class="divCell">6</div>
                             <div class="hidden-items">
                                 <i class="move fas fa-align-justify"></i>
                                 <i class="tick fas fa-check"></i>
@@ -91,6 +103,23 @@
     </div>
 
     
+    <div class="table">
+        <div class="theader">
+            <div class="divCell">Name</div>
+            <div class="divCell">#</div>
+        </div>
+        <div class="trow">
+            <div class="divCell">ehsan</div>
+            <div class="divCell">1</div>
+        </div>
+        <div class="trow">
+            <div class="divCell">Mahshid</div>
+            <div class="divCell">2</div>
+        </div>
+    </div>
+
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -99,7 +128,7 @@
     <script>
         Sortable.create(simpleList, {
             animation: 150,
-            group : 'shared',
+            group : 'shared', 
         });
         Sortable.create(simpleList2, {
             animation: 150,
