@@ -25,25 +25,9 @@
     color: 	#5e92c0;
 }
 
-.Table-header{
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
-    background-color: rgb(251, 251, 252);
-    height: 50px;
-    line-height: 50px;
-}
-
-.Table-header div div {
-    font-weight: bold;
-}
-
 .table{
     display: table;
     border-spacing: 5px;
-}
-
-.theader{
-    font-weight: bold;
 }
 
 .trow
