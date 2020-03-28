@@ -21,36 +21,39 @@ console.log("in js file")
 //     });
 // }
 
-$('#post_form').on('submit', function(event){
-    event.preventDefault();
-    console.log("form submitted!")
-    create_post();
-});
+// POST 
+// $('#post_form').on('submit', function(event){
+//     event.preventDefault();
+//     console.log("form submitted!")
+//     create_post();
+// });
+// let create_post = () => {
+//     console.log("in create post funciton")
+//     $.ajax({
+//         url : "/ajax/submit/",
+//         type : "POST",
+//         data : {
+//             name : $("#id_name").val(),
+//             number : $("#id_number").val(),
+//         },
+//         success : function(json) {
+//             $("#id_name").val(''),
+//             $("#id_number").val(''),
+//             console.log(json),
+//             console.log('success')
+//         },
+//         error: function(xhr,errmsg,err){
+//            console.log("error :(")
+//            console.log(err)
+//         }
+//     })
+// }
 
 
-let create_post = () => {
-    console.log("in create post funciton")
-    $.ajax({
-        url : "/ajax/submit/",
-        type : "POST",
-        data : {
-            name : $("#id_name").val(),
-            number : $("#id_number").val(),
-        },
-        success : function(json) {
-            $("#id_name").val(''),
-            $("#id_number").val(''),
-            console.log(json),
-            console.log('success')
-        },
-        error: function(xhr,errmsg,err){
-           console.log("error :(")
-           console.log(err)
-        }
-    })
-}
-
-
+$("#simpleList").on("drop" , function(event){
+    console.log("in drop handler")
+    
+})
 
 $(function() {
 
