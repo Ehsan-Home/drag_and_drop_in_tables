@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from student1.views import student_view
+from student1.views import student_view , submit_button_view
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('home/' , student_view)
+    url('home/' , student_view),
+    url('ajax/submit' , submit_button_view),
 ]
