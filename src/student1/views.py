@@ -21,18 +21,29 @@ def student_view(request):
 
 def submit_button_view(request):
     print("in AJAX view")
-    print(request.POST)
+    #print(request.POST)
 
-    form = StudentForm(request.POST)
+    post_name = request.POST["name"]
+    post_number = request.POST["number"]
+    post_targettable = request.POST["targettable"]
 
-    if form.is_valid():
-        form.save()
+    #print(post_name , post_number , post_targettable)
+
+    targetrow = Student2.objects.get(name=post_name)
+    print(targetrow)
+    # Handling POST
+    # print(request.POST)
+
+    # form = StudentForm(request.POST)
+
+    # if form.is_valid():
+    #     form.save()
     
-    data = {
-        "src" : "this is success"
-    }
+    # data = {
+    #     "src" : "this is success"
+    # }
 
-    return JsonResponse(data)
+    # return JsonResponse(data)
 
     # Handling GET
     # print(request.GET)
