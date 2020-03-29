@@ -51,8 +51,8 @@ console.log("in js file")
 
 
 $("#simpleList").on("drop" , function(event){
-    console.log("in drop handler")
     
+    console.log($("event"));
 })
 
 $(function() {
