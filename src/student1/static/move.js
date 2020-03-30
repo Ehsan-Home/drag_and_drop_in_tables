@@ -1,5 +1,5 @@
 console.log("in js file")
-
+var dragstarttables
 // GET 
 // let Func = () => {
 //     console.log("HI");
@@ -49,10 +49,24 @@ console.log("in js file")
 //     })
 // }
 
+function dragStart2(event)
+{
+    //console.log("in drag")
+    console.log(event.path[1].id)
+    dragstarttables = 2
+}
+
+function dragStart1(event)
+{
+    console.log("in drag")
+    console.log(event.path[1].id)
+    dragstarttables = 1
+}
 
 $("#simpleList").on("drop" , function(event){
     console.log("Drop handler")
-
+    
+    //console.log(dragstarttables)
     let txt = event.target.innerText
     let modifiedtxt = txt.split("\n")
     name_got = modifiedtxt[0]
@@ -61,28 +75,65 @@ $("#simpleList").on("drop" , function(event){
     console.log(number_got)
     
     
-    $.ajax({
-        url : "/ajax/submit/",
-        type : "POST",
-        data : {
-            name : name_got,
-            number : number_got,
-            targettable : 1,
-        },
-        success : function(data){
-            console.log("in success")
-            msg = data.src
-            alert(msg)
-        },
-        error : function(xhr,errmsg,err){
-            console.log("error :(")
-            console.log(err)
-        }
-    })
-    
-
+    if(dragstarttables == 2){
+        console.log("condition met")
+        $.ajax({
+            url : "/ajax/submit/",
+            type : "POST",
+            data : {
+                name : name_got,
+                number : number_got,
+                targettable : 1,
+            },
+            success : function(data){
+                console.log("in success")
+                msg = data.src
+                alert(msg)
+            },
+            error : function(xhr,errmsg,err){
+                console.log("error :(")
+                console.log(err)
+                console.log(errmsg)
+            }
+        })
+    }
 })
 
+
+$("#simpleList2").on("drop" , function(event){
+        console.log("Drop handler list 2")
+        
+        console.log(dragstarttables)
+        let txt = event.target.innerText
+        let modifiedtxt = txt.split("\n")
+        name_got = modifiedtxt[0]
+        number_got = modifiedtxt[1]
+        console.log(name_got)
+        console.log(number_got)
+        
+        
+        if(dragstarttables == 1){
+            $.ajax({
+                url : "/ajax/submit/",
+                type : "POST",
+                data : {
+                    name : name_got,
+                    number : number_got,
+                    targettable : 2,
+                },
+                success : function(data){
+                    console.log("in success")
+                    msg = data.src
+                    alert(msg)
+                },
+                error : function(xhr,errmsg,err){
+                    console.log("error :(")
+                    console.log(err)
+                }
+            })
+        }
+})
+    
 
 
 $(function() {

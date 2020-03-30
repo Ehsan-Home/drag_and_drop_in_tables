@@ -9,19 +9,19 @@
             <div class="col-6">
                 <div class="table">
                     <div id="simpleList" class="list-group">
-                        {% for sub_stds in Std1 %}
-                        <div class="list-group-item trow">
-                        <div class="d-flex">
-                            <div id="id_name" class="divCell">{{ sub_stds.name }}</div>
-                            <div id="id_number" class="divCell">{{ sub_stds.number }}</div>
-                            <div class="hidden-items">
-                                <i class="move fas fa-align-justify"></i>
-                                <i class="tick fas fa-check"></i>
-                                <i class="calender fas fa-calendar-week"></i>
+                            {% for sub_stds in Std1 %}
+                            <div class="list-group-item trow" ondragstart="dragStart1(event)">
+                                <div class="d-flex">
+                                    <div id="id_name" class="divCell">{{ sub_stds.name }}</div>
+                                    <div id="id_number" class="divCell">{{ sub_stds.number }}</div>
+                                    <div class="hidden-items">
+                                        <i class="move fas fa-align-justify"></i>
+                                        <i class="tick fas fa-check"></i>
+                                        <i class="calender fas fa-calendar-week"></i>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        </div>
-                        {% endfor %}
+                            {% endfor %}
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="table">
                     <div id="simpleList2" class="list-group">
                     {% for sub_stds in Std2 %}
-                        <div class="list-group-item trow">
+                        <div class="list-group-item trow" ondragstart="dragStart2(event)">
                         <div class="d-flex">
                         <div class="divCell">{{ sub_stds.name }}</div>
                         <div class="divCell">{{ sub_stds.number }}</div>
