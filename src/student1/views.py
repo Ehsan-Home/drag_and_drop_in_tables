@@ -27,10 +27,24 @@ def submit_button_view(request):
     post_number = request.POST["number"]
     post_targettable = request.POST["targettable"]
 
+    Student1_obj =  Student1.objects.create(
+        name = post_name,
+        number= post_number,
+    )
+
     #print(post_name , post_number , post_targettable)
 
-    targetrow = Student2.objects.get(name=post_name)
-    print(targetrow)
+    Student2.objects.filter(name=post_name).delete()
+
+    data = {
+        "src" : "success"
+    }
+
+    return JsonResponse(data)
+    # print(targetrow.name)
+    # print(targetrow.number)
+
+    
     # Handling POST
     # print(request.POST)
 

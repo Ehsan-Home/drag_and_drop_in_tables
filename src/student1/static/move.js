@@ -52,12 +52,15 @@ console.log("in js file")
 
 $("#simpleList").on("drop" , function(event){
     console.log("Drop handler")
+
     let txt = event.target.innerText
     let modifiedtxt = txt.split("\n")
     name_got = modifiedtxt[0]
     number_got = modifiedtxt[1]
-    // console.log(name_got)
-    // console.log(number_got)
+    console.log(name_got)
+    console.log(number_got)
+    
+    
     $.ajax({
         url : "/ajax/submit/",
         type : "POST",
@@ -66,8 +69,10 @@ $("#simpleList").on("drop" , function(event){
             number : number_got,
             targettable : 1,
         },
-        success : function(){
-            alert("this is done in success")
+        success : function(data){
+            console.log("in success")
+            msg = data.src
+            alert(msg)
         },
         error : function(xhr,errmsg,err){
             console.log("error :(")
