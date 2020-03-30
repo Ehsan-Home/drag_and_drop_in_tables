@@ -1,5 +1,7 @@
 console.log("in js file")
 var dragstarttables
+var name_got
+var number_got
 // GET 
 // let Func = () => {
 //     console.log("HI");
@@ -51,32 +53,24 @@ var dragstarttables
 
 function dragStart2(event)
 {
-    //console.log("in drag")
-    console.log(event.path[1].id)
-    dragstarttables = 2
-}
+    console.log("in drag table 2")
+    let txt = event.path[0].innerText
+    let modifiedtxt = txt.split("\n")
+    name_got = modifiedtxt[0]
+    number_got = modifiedtxt[1]
 
-function dragStart1(event)
-{
-    console.log("in drag")
-    console.log(event.path[1].id)
-    dragstarttables = 1
+    console.log("name:",name_got)
+    console.log("number:",number_got)
+    dragstarttables = 2
 }
 
 $("#simpleList").on("drop" , function(event){
     console.log("Drop handler")
     
     //console.log(dragstarttables)
-    let txt = event.target.innerText
-    let modifiedtxt = txt.split("\n")
-    name_got = modifiedtxt[0]
-    number_got = modifiedtxt[1]
-    console.log(name_got)
-    console.log(number_got)
-    
-    
     if(dragstarttables == 2){
-        console.log("condition met")
+        console.log("in if")
+        
         $.ajax({
             url : "/ajax/submit/",
             type : "POST",
@@ -99,39 +93,44 @@ $("#simpleList").on("drop" , function(event){
     }
 })
 
+function dragStart1(event)
+{
+    console.log("in drag table 1")
+    let txt = event.path[0].innerText
+    let modifiedtxt = txt.split("\n")
+    name_got = modifiedtxt[0]
+    number_got = modifiedtxt[1]
+
+    console.log("name:",name_got)
+    console.log("number:",number_got)
+    dragstarttables = 1
+}
 
 $("#simpleList2").on("drop" , function(event){
-        console.log("Drop handler list 2")
-        
-        console.log(dragstarttables)
-        let txt = event.target.innerText
-        let modifiedtxt = txt.split("\n")
-        name_got = modifiedtxt[0]
-        number_got = modifiedtxt[1]
-        console.log(name_got)
-        console.log(number_got)
-        
-        
-        if(dragstarttables == 1){
-            $.ajax({
-                url : "/ajax/submit/",
-                type : "POST",
-                data : {
-                    name : name_got,
-                    number : number_got,
-                    targettable : 2,
-                },
-                success : function(data){
-                    console.log("in success")
-                    msg = data.src
-                    alert(msg)
-                },
-                error : function(xhr,errmsg,err){
-                    console.log("error :(")
-                    console.log(err)
-                }
-            })
-        }
+    console.log("Drop handler list 2")
+    
+    //console.log(dragstarttables)
+    if(dragstarttables == 1){
+        console.log("in if")
+        $.ajax({
+            url : "/ajax/submit/",
+            type : "POST",
+            data : {
+                name : name_got,
+                number : number_got,
+                targettable : 2,
+            },
+            success : function(data){
+                console.log("in success")
+                msg = data.src
+                alert(msg)
+            },
+            error : function(xhr,errmsg,err){
+                console.log("error :(")
+                console.log(err)
+            }
+        })
+    }
 })
     
 

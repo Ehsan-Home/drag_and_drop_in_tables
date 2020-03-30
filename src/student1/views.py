@@ -34,7 +34,7 @@ def submit_button_view(request):
             name = post_name,
             number= post_number,
         )
-        Student2.objects.filter(name=post_name).delete()
+        Student2.objects.filter(name=post_name,  number= post_number).delete()
     
 
     if post_targettable == "2":
@@ -42,7 +42,7 @@ def submit_button_view(request):
             name = post_name,
             number= post_number,
         )
-        Student1.objects.filter(name=post_name).delete()
+        Student1.objects.filter(name=post_name, number= post_number).delete()
 
 
     data = {
